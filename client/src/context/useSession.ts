@@ -1,4 +1,4 @@
 import { useContext } from 'react'
-import { SessionContext } from './sessionContext'
+import { SessionContext } from './SessionContextStore'
 
 export const useSession = () => useContext(SessionContext)

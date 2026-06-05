@@ -4,10 +4,10 @@ import type { ClientToServerEvents, ServerToClientEvents } from '../../../shared
 import { adminOverrideStep, getSessionState, resetTrainingSession } from '../services/sessionService'
 import { isValidStep } from '../state/stateMachine'
 
-export const createSocketServer = (httpServer: HttpServer) => {
+export const createSocketServer = (httpServer: HttpServer, allowedOrigins: string[]) => {
   const io = new Server<ClientToServerEvents, ServerToClientEvents>(httpServer, {
     cors: {
-      origin: '*',
+      origin: allowedOrigins,
       methods: ['GET', 'POST'],
     },
   })

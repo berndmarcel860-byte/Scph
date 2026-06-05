@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import type { SessionState } from '../../../shared/types/session'
 import { useSocket } from '../hooks/useSocket'
-import { SessionContext } from './sessionContext'
+import { SessionContext } from './SessionContextStore'
 
 export const SessionProvider = ({ children }: { children: ReactNode }) => {
   const [session, setSession] = useState<SessionState | null>(null)
